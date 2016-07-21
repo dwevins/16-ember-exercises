@@ -22,10 +22,10 @@
 <button>submit</button>
 </form>
 
-<button type="button" name="button" {{action 'showForm' on='click'}}>{{if outputVisible 'hide form' 'add contact'}}</button>
+<button type="button" name="button" {{action 'showForm' on='click'}}>{{if formVisible 'hide form' 'add contact'}}</button>
 
 <div class="content">
-  <ul class="list" >
+  <ul class='list {{if formVisible 'hidden'}}'>
     {{#each model as |contact|}}
       <li class="list-item">
         <p class="first-name">First Name: {{contact.firstName}}</p>

@@ -4,7 +4,6 @@ export default Ember.Controller.extend({
   actions: {
     showForm() {
       this.toggleProperty('formVisible');
-      this.toggleProperty('outputVisible')
     },
 
     deleteContact(contact) {
@@ -40,7 +39,7 @@ export default Ember.Controller.extend({
       .then((contact) => {
         this.set('model', [contact, ...this.model]);
       });
-
+      this.toggleProperty('formVisible')
       this.set(firstName, '');
       this.set(lastName, '');
       this.set(address, '');
