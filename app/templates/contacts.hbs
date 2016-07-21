@@ -1,4 +1,4 @@
-<form class='form' {{action 'addContact' on='submit'}}>
+<form class='form {{unless formVisible 'hidden'}}' {{action 'addContact' on='submit'}}>
   <p>
     <label>first name</label>
     {{input type='text' value=firstName}}
@@ -22,16 +22,17 @@
 <button>submit</button>
 </form>
 
-<button type="button" name="button" {{action 'showForm' on='click'}}>add contact</button>
+<button type="button" name="button" {{action 'showForm' on='click'}}>{{if outputVisible 'hide form' 'add contact'}}</button>
 
 <div class="content">
-  <ul class="list">
+  <ul class="list" >
     {{#each model as |contact|}}
       <li class="list-item">
         <p class="first-name">First Name: {{contact.firstName}}</p>
         <p class="last-name">Last Name: {{contact.lastName}}</p>
         <p class="address">Address: {{contact.address}}</p>
         <p class="phone-number">Phone Number: {{contact.phoneNumber}}</p>
+        <button class="delete" {{action 'deleteContact' contact}}>delete</button>
       </li>
     {{/each}}
   </ul>
