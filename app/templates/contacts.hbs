@@ -1,1 +1,41 @@
+<form class='form' {{action 'addContact' on='submit'}}>
+  <p>
+    <label>first name</label>
+    {{input type='text' value=firstName}}
+  </p>
+
+  <p>
+    <label>last name</label>
+    {{input type='text' value=firstName}}
+  </p>
+
+  <p>
+    <label>address</label>
+    {{input type='text' value=address}}
+  </p>
+
+  <p>
+    <label>phone number</label>
+    {{input type='text' value=phoneNumber}}
+  </p>
+
+<button>submit</button>
+</form>
+
+<button type="button" name="button" {{action 'showForm' on='click'}}>add contact</button>
+
+<div class="content">
+  <ul class="list">
+    {{log model}}
+    {{#each model as |contact|}}
+      <li class="list-item">
+        <p class="first-name">First Name: {{contact.firstName}}</p>
+        <p class="last-name">Last Name: {{contact.lastName}}</p>
+        <p class="address">Address: {{contact.address}}</p>
+        <p class="phone-number">Phone Number: {{contact.phoneNumber}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
 {{outlet}}

@@ -1,5 +1,3 @@
-{{log model}}
-
 <form {{action 'newBookmark' on='submit'}}>
   <p>
     <label>URL</label>
@@ -15,7 +13,7 @@
 </form>
 
 {{#each model as |bookmark|}}
-  <a href="{{unbound bookmark.url}}">{{bookmark.url}}</a>
+  <a href="{{bookmark.url}}">{{bookmark.url}}</a>
 
   <p>
     {{bookmark.nickName}}
