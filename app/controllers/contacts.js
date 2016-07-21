@@ -19,10 +19,10 @@ export default Ember.Controller.extend({
         body: JSON.stringify(data),
       });
 
-      this.firstName = '';
-      this.lastName = '';
-      this.address = '';
-      this.phoneNumber = '';
+      Ember.set(this, firstName, '');
+      Ember.set(this, lastName = '');
+      Ember.set(this, address = '');
+      Ember.set(this, phoneNumber = '');
     }
   }
 });
