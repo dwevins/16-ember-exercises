@@ -1,1 +1,7 @@
+{{#each model as |blog|}}
+{{log blog}}
+  <h3>{{blog.title}}</h3>
+  <p>{{blog.content}}</p>
+{{/each}}
+
 {{outlet}}
